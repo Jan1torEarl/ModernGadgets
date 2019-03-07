@@ -1,7 +1,7 @@
 [Variables]
 ; CPU Meter
 autoMaxCpuTemp=100
-autoMaxCpuFan=1590
+autoMaxCpuFan=1
 ; Network Meter
 externalIp=67.2.53.26
 
