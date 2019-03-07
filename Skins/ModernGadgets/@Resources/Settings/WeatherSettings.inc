@@ -1,6 +1,6 @@
 [Variables]
 ; LocationCode can be obtained at http://wxdata.weather.com/wxdata/search/search?where=YourCityName
-locationCode=USUT0281
+locationCode=USNC0087
 ; UnitOfMeasure can be "f" (Fahrenheit / Imperial) or "m" (Celsius / Metric)
 unitOfMeasure=f
 ; Number of days to return in the feed.(1-6).
@@ -19,7 +19,7 @@ showUv=1
 showUvChart=1
 showAtmPressure=0
 showVisibility=1
-showDewpoint=0
+showDewpoint=1
 showWindInfo=1
 showSunMoonInfo=1
 showMoonAngle=1

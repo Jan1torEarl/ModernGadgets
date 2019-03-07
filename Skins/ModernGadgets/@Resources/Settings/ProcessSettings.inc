@@ -1,10 +1,10 @@
 [Variables]
-showAvgUsage=0
+showAvgUsage=1
 showBars=1
-showLineGraph=1
+showLineGraph=0
 processLabelFontFace=IBM Plex Sans Condensed
 
-processes=10
+processes=8
 processMode=1
 processBlacklist=_Total|Idle|dwm|csrss|svchost|lsass|System|spoolsv
 
