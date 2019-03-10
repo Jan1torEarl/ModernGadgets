@@ -1,10 +1,10 @@
 [Variables]
 showGpuName=1
-showMemoryClock=1
+showMemoryClock=0
 showFanInfo=1
-showMemoryController=1
-showVideoClock=1
-showCoreVoltage=1
+showMemoryController=0
+showVideoClock=0
+showCoreVoltage=0
 showLineGraph=1
 showTempGraph=1
 
@@ -30,44 +30,44 @@ HWiNFO-GPU0-Clock-SensorId=0xe0002000
 HWiNFO-GPU0-Clock-SensorInstance=0x0
 HWiNFO-GPU0-Clock-EntryId=0x6000000
 ; GPU Temperature [HWiNFO-GPU0-Temp]
-HWiNFO-GPU0-Temp-SensorId=#HWiNFO-GPU0-Clock-SensorId#
-HWiNFO-GPU0-Temp-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
+HWiNFO-GPU0-Temp-SensorId=0xe0002000
+HWiNFO-GPU0-Temp-SensorInstance=0x0
 HWiNFO-GPU0-Temp-EntryId=0x1000000
 ; GPU Load [HWiNFO-GPU0-CoreLoad]
-HWiNFO-GPU0-CoreLoad-SensorId=#HWiNFO-GPU0-Clock-SensorId#
-HWiNFO-GPU0-CoreLoad-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
+HWiNFO-GPU0-CoreLoad-SensorId=0xe0002000
+HWiNFO-GPU0-CoreLoad-SensorInstance=0x0
 HWiNFO-GPU0-CoreLoad-EntryId=0x7000000
 ; Memory Clock Frequency [HWiNFO-GPU0-MemoryClock]
-HWiNFO-GPU0-MemoryClock-SensorId=#HWiNFO-GPU0-Clock-SensorId#
-HWiNFO-GPU0-MemoryClock-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
+HWiNFO-GPU0-MemoryClock-SensorId=0xe0002000
+HWiNFO-GPU0-MemoryClock-SensorInstance=0x0
 HWiNFO-GPU0-MemoryClock-EntryId=0x6000004
 ; Memory Usage [HWiNFO-GPU0-MemoryUsage]
-HWiNFO-GPU0-MemoryUsage-SensorId=#HWiNFO-GPU0-Clock-SensorId#
-HWiNFO-GPU0-MemoryUsage-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
+HWiNFO-GPU0-MemoryUsage-SensorId=0xe0002000
+HWiNFO-GPU0-MemoryUsage-SensorInstance=0x0
 HWiNFO-GPU0-MemoryUsage-EntryId=0x7000008
 ; Memory Allocated [HWiNFO-GPU0-MemoryAlloc]
-HWiNFO-GPU0-MemoryAlloc-SensorId=#HWiNFO-GPU0-Clock-SensorId#
-HWiNFO-GPU0-MemoryAlloc-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
-HWiNFO-GPU0-MemoryAlloc-EntryId=0x800003c
+HWiNFO-GPU0-MemoryAlloc-SensorId=0xe0002000
+HWiNFO-GPU0-MemoryAlloc-SensorInstance=0x0
+HWiNFO-GPU0-MemoryAlloc-EntryId=0x80000fc
 ; Fan Speed [HWiNFO-GPU0-FanSpeed]
-HWiNFO-GPU0-FanSpeed-SensorId=#HWiNFO-GPU0-Clock-SensorId#
-HWiNFO-GPU0-FanSpeed-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
+HWiNFO-GPU0-FanSpeed-SensorId=0xe0002000
+HWiNFO-GPU0-FanSpeed-SensorInstance=0x0
 HWiNFO-GPU0-FanSpeed-EntryId=0x3000000
 ; Fan Usage [HWiNFO-GPU0-FanUsage]
-HWiNFO-GPU0-FanUsage-SensorId=#HWiNFO-GPU0-Clock-SensorId#
-HWiNFO-GPU0-FanUsage-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
+HWiNFO-GPU0-FanUsage-SensorId=0xe0002000
+HWiNFO-GPU0-FanUsage-SensorInstance=0x0
 HWiNFO-GPU0-FanUsage-EntryId=0x8000000
 ; Video Clock Frequency [HWiNFO-GPU0-VideoClock]
-HWiNFO-GPU0-VideoClock-SensorId=#HWiNFO-GPU0-Clock-SensorId#
-HWiNFO-GPU0-VideoClock-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
+HWiNFO-GPU0-VideoClock-SensorId=0xe0002000
+HWiNFO-GPU0-VideoClock-SensorInstance=0x0
 HWiNFO-GPU0-VideoClock-EntryId=0x6000005
 ; Memory Controller Usage [HWiNFO-GPU0-MemController]
-HWiNFO-GPU0-MemController-SensorId=#HWiNFO-GPU0-Clock-SensorId#
-HWiNFO-GPU0-MemController-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
+HWiNFO-GPU0-MemController-SensorId=0xe0002000
+HWiNFO-GPU0-MemController-SensorInstance=0x0
 HWiNFO-GPU0-MemController-EntryId=0x7000001
 ; Core Voltage [HWiNFO-GPU0-CoreVoltage]
-HWiNFO-GPU0-CoreVoltage-SensorId=#HWiNFO-GPU0-Clock-SensorId#
-HWiNFO-GPU0-CoreVoltage-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
+HWiNFO-GPU0-CoreVoltage-SensorId=0xe0002000
+HWiNFO-GPU0-CoreVoltage-SensorInstance=0x0
 HWiNFO-GPU0-CoreVoltage-EntryId=0x2000000
 ; 
 ; GPU 1
@@ -77,44 +77,44 @@ HWiNFO-GPU1-Clock-SensorId=0xe0002000
 HWiNFO-GPU1-Clock-SensorInstance=0x0
 HWiNFO-GPU1-Clock-EntryId=0x6000000
 ; GPU Temperature [HWiNFO-GPU1-Temp]
-HWiNFO-GPU1-Temp-SensorId=#HWiNFO-GPU1-Clock-SensorId#
-HWiNFO-GPU1-Temp-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
+HWiNFO-GPU1-Temp-SensorId=0xe0002000
+HWiNFO-GPU1-Temp-SensorInstance=0x14
 HWiNFO-GPU1-Temp-EntryId=0x1000000
 ; GPU Load [HWiNFO-GPU1-CoreLoad]
-HWiNFO-GPU1-CoreLoad-SensorId=#HWiNFO-GPU1-Clock-SensorId#
-HWiNFO-GPU1-CoreLoad-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
+HWiNFO-GPU1-CoreLoad-SensorId=0xe0002000
+HWiNFO-GPU1-CoreLoad-SensorInstance=0x14
 HWiNFO-GPU1-CoreLoad-EntryId=0x7000000
 ; Memory Clock Frequency [HWiNFO-GPU1-MemoryClock]
-HWiNFO-GPU1-MemoryClock-SensorId=#HWiNFO-GPU1-Clock-SensorId#
-HWiNFO-GPU1-MemoryClock-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
+HWiNFO-GPU1-MemoryClock-SensorId=0xe0002000
+HWiNFO-GPU1-MemoryClock-SensorInstance=0x14
 HWiNFO-GPU1-MemoryClock-EntryId=0x6000004
 ; Memory Usage [HWiNFO-GPU1-MemoryUsage]
-HWiNFO-GPU1-MemoryUsage-SensorId=#HWiNFO-GPU1-Clock-SensorId#
-HWiNFO-GPU1-MemoryUsage-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
+HWiNFO-GPU1-MemoryUsage-SensorId=0xe0002000
+HWiNFO-GPU1-MemoryUsage-SensorInstance=0x14
 HWiNFO-GPU1-MemoryUsage-EntryId=0x7000008
 ; Memory Allocated [HWiNFO-GPU1-MemoryAlloc]
-HWiNFO-GPU1-MemoryAlloc-SensorId=#HWiNFO-GPU1-Clock-SensorId#
-HWiNFO-GPU1-MemoryAlloc-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
-HWiNFO-GPU1-MemoryAlloc-EntryId=0x800003c
+HWiNFO-GPU1-MemoryAlloc-SensorId=0xe0002000
+HWiNFO-GPU1-MemoryAlloc-SensorInstance=0x14
+HWiNFO-GPU1-MemoryAlloc-EntryId=0x80000fc
 ; Fan Speed [HWiNFO-GPU1-FanSpeed]
-HWiNFO-GPU1-FanSpeed-SensorId=#HWiNFO-GPU1-Clock-SensorId#
-HWiNFO-GPU1-FanSpeed-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
+HWiNFO-GPU1-FanSpeed-SensorId=0xe0002000
+HWiNFO-GPU1-FanSpeed-SensorInstance=0x14
 HWiNFO-GPU1-FanSpeed-EntryId=0x3000000
 ; Fan Usage [HWiNFO-GPU1-FanUsage]
-HWiNFO-GPU1-FanUsage-SensorId=#HWiNFO-GPU1-Clock-SensorId#
-HWiNFO-GPU1-FanUsage-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
+HWiNFO-GPU1-FanUsage-SensorId=0xe0002000
+HWiNFO-GPU1-FanUsage-SensorInstance=0x14
 HWiNFO-GPU1-FanUsage-EntryId=0x8000000
 ; Video Clock Frequency [HWiNFO-GPU1-VideoClock]
-HWiNFO-GPU1-VideoClock-SensorId=#HWiNFO-GPU1-Clock-SensorId#
-HWiNFO-GPU1-VideoClock-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
+HWiNFO-GPU1-VideoClock-SensorId=0xe0002000
+HWiNFO-GPU1-VideoClock-SensorInstance=0x14
 HWiNFO-GPU1-VideoClock-EntryId=0x6000005
 ; Memory Controller Usage [HWiNFO-GPU1-MemController]
-HWiNFO-GPU1-MemController-SensorId=#HWiNFO-GPU1-Clock-SensorId#
-HWiNFO-GPU1-MemController-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
+HWiNFO-GPU1-MemController-SensorId=0xe0002000
+HWiNFO-GPU1-MemController-SensorInstance=0x14
 HWiNFO-GPU1-MemController-EntryId=0x7000001
 ; Core Voltage [HWiNFO-GPU1-CoreVoltage]
-HWiNFO-GPU1-CoreVoltage-SensorId=#HWiNFO-GPU1-Clock-SensorId#
-HWiNFO-GPU1-CoreVoltage-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
+HWiNFO-GPU1-CoreVoltage-SensorId=0xe0002000
+HWiNFO-GPU1-CoreVoltage-SensorInstance=0x14
 HWiNFO-GPU1-CoreVoltage-EntryId=0x2000000
 ; 
 ; GPU 2

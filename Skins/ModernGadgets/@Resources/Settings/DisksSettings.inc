@@ -18,7 +18,7 @@ invertDiskSpace=1
 showEjectButtons=1
 showDiskTemps=1
 showDiskReadWrite=1
-showLineGraph=1
+showLineGraph=0
 showHistograms=1
 showDiskReadWriteLetters=0
 

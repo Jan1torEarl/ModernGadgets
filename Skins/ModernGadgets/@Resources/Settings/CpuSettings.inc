@@ -12,8 +12,8 @@ sfCpuFan=1
 
 ; Settings
 showCpuName=1
-showPageFile=0
-showCoreTemps=1
+showPageFile=1
+showCoreTemps=2
 showCoreVoltages=1
 showCpuTempGraph=1
 showTopProcess=0
@@ -21,7 +21,7 @@ showCpuFan=1
 showCpuFanGraph=0
 showCpuClock=1
 showLineGraph=1
-showAvgCpu=0
+showAvgCpu=1
 showTt=0
 playTtSound=0
 graphAllCoresMode=0
@@ -268,7 +268,7 @@ HWiNFO-CPU0-Core31Temp-EntryId=0x100001f
 ; CPU Package Temperature [HWiNFO-CPU0-PackageTemp]
 HWiNFO-CPU0-PackageTemp-SensorId=0xf0000400
 HWiNFO-CPU0-PackageTemp-SensorInstance=0x0
-HWiNFO-CPU0-PackageTemp-EntryId=0x100007e
+HWiNFO-CPU0-PackageTemp-EntryId=0x10000ff
 ; CPU Core 0 Distance to TjMax [HWiNFO-CPU0-Core0TjMax]
 HWiNFO-CPU0-Core0TjMax-SensorId=0xf0000400
 HWiNFO-CPU0-Core0TjMax-SensorInstance=0x0
@@ -416,7 +416,7 @@ HWiNFO-CPU0-RingClock-EntryId=0x6000005
 ; MOBO
 ;
 ; CPU Fan [HWiNFO-MOBO-CPUFan]
-HWiNFO-MOBO-CPUFan-SensorId=0xf7067910
+HWiNFO-MOBO-CPUFan-SensorId=0xf7067980
 HWiNFO-MOBO-CPUFan-SensorInstance=0x0
 HWiNFO-MOBO-CPUFan-EntryId=0x3000001
 

@@ -1,10 +1,10 @@
 [Variables]
 showGpuName=1
-showMemoryClock=1
+showMemoryClock=0
 showFanInfo=1
-showMemoryController=1
-showVideoClock=1
-showCoreVoltage=1
+showMemoryController=0
+showVideoClock=0
+showCoreVoltage=0
 showLineGraph=1
 showTempGraph=1
 
