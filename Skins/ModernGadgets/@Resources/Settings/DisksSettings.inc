@@ -5,7 +5,7 @@ fpfWriteDepth=4
 fpfSpaceUsedDepth=5
 fpfSpaceTotalDepth=5
 
-manualHideDisks=
+manualHideDisks=F
 hideElements=
 unnamedDiskLabel=---
 
