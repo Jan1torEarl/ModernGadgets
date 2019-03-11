@@ -28,7 +28,7 @@ graphAllCoresMode=0
 
 cpuName=auto
 
-maxCpuTempMode=auto
+maxCpuTempMode=custom
 maxCpuFanMode=auto
 customMaxCpuTemp=85
 customMaxCpuFan=1600
