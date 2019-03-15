@@ -19,4 +19,4 @@ colorPeak=99,125,217
 
 colorGlobe=137,190,250
 
-autoAdapterConfig=0
+autoAdapterConfig=1
