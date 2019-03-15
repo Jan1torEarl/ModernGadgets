@@ -1,13 +1,13 @@
 [Variables]
 ; CPU Meter
-autoMaxCpuTemp=1
+autoMaxCpuTemp=100
 autoMaxCpuFan=1
 extProgram=1
 cpuCores=8
 threadsPerCore=2
 includeNum=8
 ; Network Meter
-externalIp=
+externalIp=66.194.24.242
 
 ; - Disks Meter -
 

@@ -1,5 +1,5 @@
 [Variables]
-interfaceEthernet=
+interfaceEthernet=TIntel(R) Ethernet Connection I217-LM
 interfaceWireless=
 interfaceOther=
 
@@ -19,4 +19,4 @@ colorPeak=99,125,217
 
 colorGlobe=137,190,250
 
-autoAdapterConfig=1
+autoAdapterConfig=0
