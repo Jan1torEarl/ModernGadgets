@@ -1,6 +1,6 @@
 [Variables]
 ; CPU Meter
-autoMaxCpuTemp=63
+autoMaxCpuTemp=101
 autoMaxCpuFan=1590
 ; Network Meter
 externalIp=67.2.53.26
@@ -9,9 +9,9 @@ externalIp=67.2.53.26
 
 ; Disk ID from index
 d1=C
-d2=E
-d3=H
-d4=I
+d2=H
+d3=I
+d4=
 d5=
 d6=
 d7=
@@ -22,7 +22,7 @@ d10=
 hideDisk1=0
 hideDisk2=0
 hideDisk3=0
-hideDisk4=0
+hideDisk4=1
 hideDisk5=1
 hideDisk6=1
 hideDisk7=1
@@ -34,11 +34,11 @@ diskAIndex=0
 diskBIndex=0
 diskCIndex=1
 diskDIndex=0
-diskEIndex=2
+diskEIndex=0
 diskFIndex=0
 diskGIndex=0
-diskHIndex=3
-diskIIndex=4
+diskHIndex=2
+diskIIndex=3
 diskJIndex=0
 diskKIndex=0
 diskLIndex=0
