@@ -1,6 +1,6 @@
 [Variables]
 ; CPU Meter
-autoMaxCpuTemp=100
+autoMaxCpuTemp=93
 autoMaxCpuFan=1
 extProgram=1
 cpuCores=8
