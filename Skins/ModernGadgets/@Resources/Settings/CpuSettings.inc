@@ -23,7 +23,7 @@ showCpuClock=1
 showLineGraph=1
 ; -----
 ; Naming mixup - first is line graph, second is the main display
-showAvgCpu=0
+showAvgCpu=1
 showAvgCpuUsage=0
 ; -----
 showTt=0
