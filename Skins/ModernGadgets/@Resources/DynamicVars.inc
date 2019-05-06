@@ -1,8 +1,8 @@
 [Variables]
 ; CPU Meter
-autoMaxCpuTemp=93
+autoMaxCpuTemp=1
 autoMaxCpuFan=1
-extProgram=1
+extProgram=0
 cpuCores=8
 threadsPerCore=2
 includeNum=8
@@ -14,7 +14,7 @@ externalIp=66.194.24.242
 ; Disk ID from index
 d1=C
 d2=D
-d3=
+d3=F
 d4=
 d5=
 d6=
@@ -25,7 +25,7 @@ d10=
 ; Disk exists
 hideDisk1=0
 hideDisk2=0
-hideDisk3=1
+hideDisk3=0
 hideDisk4=1
 hideDisk5=1
 hideDisk6=1
@@ -39,7 +39,7 @@ diskBIndex=0
 diskCIndex=1
 diskDIndex=2
 diskEIndex=0
-diskFIndex=0
+diskFIndex=3
 diskGIndex=0
 diskHIndex=0
 diskIIndex=0
