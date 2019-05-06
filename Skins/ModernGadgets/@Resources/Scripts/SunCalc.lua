@@ -2,14 +2,20 @@
     ----------------------------------------------------------------------------------------------------
     SUNCALC.LUA
     raiguard
-    v2.0.0
+    v2.0.2
 
     This script is a form of 'SunCalc' by mourner, translated to LUA and adapted for Rainmeter
     The original source code of SunCalc can be found at https://github.com/mourner/suncalc
     See below to view SunCalc's source code license
     ----------------------------------------------------------------------------------------------------
     CHANGELOG:
-    v2.0.0 - 2018-02-15
+    v2.0.2 - 2019-04-21
+        - Fixed faulty timestamp conversion causing the entire script to be a day off
+        - Consolidated PrintTable() into RmLog()
+        - Fixed some minor typos
+    v2.0.1 - 2019-04-01
+        - Fixed faulty math.round function
+    v2.0.0 - 2019-02-15
         - Enabled skin-side access to SunCalc's raw data tables
         - Added timestamp exports
         - Removed proprietary calculations and data table from the GenerateData() script
@@ -48,8 +54,8 @@ function GenerateData(timestamp, latitude, longitude, tzOffset)
 
     -- setup timestamps
     local timestamp, mDate, zDate, ysDate, tmDate = SetupTimestamps(timestamp, tzOffset)
-    RmLog('timestamp: ' .. timestamp)
-    RmLog('mDate: ' .. mDate .. ' zDate: ' .. zDate .. ' ysDate: ' .. ysDate .. ' tmDate: ' .. tmDate)
+    -- RmLog('timestamp: ' .. timestamp)
+    -- RmLog('mDate: ' .. mDate .. ' zDate: ' .. zDate .. ' ysDate: ' .. ysDate .. ' tmDate: ' .. tmDate)
 
     -- retrieve data tables from SunCalc script
     data.sunTimes = SunCalc.getTimes(mDate, latitude, longitude)
@@ -67,20 +73,19 @@ function GenerateData(timestamp, latitude, longitude, tzOffset)
         data.moonTimes.rise = SunCalc.getMoonTimes(ysDate, latitude, longitude)['rise']
     end
 
-    -- PrintTable(data)
-
     -- convert timestamps back to FILETIME
-    data.sunTimes = UnixToFiletime(data.sunTimes, tzOffset)
-    data.moonTimes = UnixToFiletime(data.moonTimes, tzOffset)
+    data.sunTimes = ConvertTime(data.sunTimes, 'Windows', true, tzOffset)
+    data.moonTimes = ConvertTime(data.moonTimes, 'Windows', true, tzOffset)
+    data.timestamps = ConvertTime({ timestamp = timestamp, mDate = mDate, zDate = zDate, ysDate = ysDate, tmDate = tmDate }, 'Windows', true, tzOffset)
+    -- data.timestamps.timestamp = ConvertTime(timestamp
 
     -- add moon phase name info
     data.moonIllumination.phaseName = GetMoonPhaseName(data.moonIllumination.phase)
 
-    -- add timestamp info for use in the skin
-    data.timestamps = UnixToFiletime({ timestamp = timestamp, zDate = zDate, ysDate = ysDate, tmDate = tmDate }, tzOffset)
-
     -- debug logging
-    PrintTable(data)
+    RmLog('data = {')
+    RmLog(data)
+    RmLog('}')
 
     SKIN:Bang('!EnableMeasureGroup', 'SunCalc')
     SKIN:Bang('!UpdateMeasureGroup', 'SunCalc')
@@ -102,16 +107,16 @@ end
 
 -- ----- Utilities -----
 
--- converts a Windows FILETIME timestamp into a Unix epoch timestamp, accounting for timezone and DST, then returns several useful timestamps
-function SetupTimestamps(timestamp, tzOffset)
+-- sets up and returns several useful timestamps
+function SetupTimestamps(timestamp)
 
-    tzOffset = tzOffset or 0
     local localTz = (GetTimeOffset() / 3600)
-    -- RmLog('localTz: ' .. localTz .. ' | tzOffset: ' .. tzOffset)
+    -- convert Windows timestamp (0 = 1/1/1601) to Unix/Lua timestamp (0 = 1/1/1970)
+    timestamp = ConvertTime(timestamp, 'Unix', false, localTz * -1)
     tDate = os.date("!*t", timestamp)
-    tDate.year = tDate.year - (1970 - 1601)
-    timestamp = os.time(tDate) - (os.date('*t')['isdst'] and 3600 or 0)
-    -- RmLog('timestamp: ' .. timestamp)
+    RmLog('tdate = {')
+    RmLog(tDate)
+    RmLog('}')
     mDate = tonumber(tostring(timestamp) .. '000')   
     zDate = tonumber(tostring(os.time{ year = tDate.year, month = tDate.month, day = tDate.day, hour = 0, min = 0, sec = 0 }) .. '000')
     ysDate = zDate - 86400000  
@@ -126,20 +131,24 @@ function SetupTimestamps(timestamp, tzOffset)
 
 end
 
--- converts unix epoch timestamps into Windows FILETIME timestamps
-function UnixToFiletime(table, tzOffset)
+-- converts between windows and unix epoch timestamps, with an optional timezone offset
+function ConvertTime(n, to, mode, tzOffset)
 
-    for k,timestamp in pairs(table) do
+    if tzOffset == nil then tzOffset = 0 end
 
-        local tDate = os.date("*t", tostring(timestamp):sub(1,10))
-        tDate.year = tDate.year + (1970 - 1601)
-        tDate.hour = tDate.hour + tzOffset
-        timestamp = os.time(tDate)
-        table[k] = timestamp
+	local Formats = {
+		Unix    = -1,
+		Windows = 1
+    }
 
+    if type(n) == 'table' then
+        for k,t in pairs(n) do
+            n[k] = ConvertTime(t, to, mode, tzOffset)
+        end
+        return n
     end
-
-    return table
+    
+    return Formats[to] and (mode and tonumber(tostring(n):sub(1,10)) or n) + (11644473600 * Formats[to]) + (tzOffset * 3600) or nil
 
 end
 
@@ -167,34 +176,31 @@ end
 
 function GetTimeOffset() return (os.time() - os.time(os.date('!*t')) + (os.date('*t')['isdst'] and 3600 or 0)) end
 
--- function to make logging messages less cluttered
-function RmLog(message, type)
+-- writes the given string or table to the rainmeter log
+function RmLog(message, category)
 
-    if type == nil then type = 'Debug' end
+    if debug == nil then debug = false end
+    if category == nil then category = 'Debug' end
+    if category == 'Debug' and debug == false then return end
+    if printIndent == nil then printIndent = '' end
       
-    if debug == true then
-        SKIN:Bang("!Log", message, type)
-    elseif type ~= 'Debug' then
-        SKIN:Bang("!Log", message, type)
-    end
-      
-end
-
-printIndent = '     '
-
--- prints the entire contents of a table to the Rainmeter log
-function PrintTable(table)
-    for k,v in pairs(table) do
-        if type(v) == 'table' then
-            local pI = printIndent
-            RmLog(printIndent .. tostring(k) .. ':')
-            printIndent = printIndent .. '  '
-            PrintTable(v)
-            printIndent = pI
-        else
-            RmLog(printIndent .. tostring(k) .. ': ' .. tostring(v))
+    if type(message) == 'table' then
+        for k,v in pairs(message) do
+            if type(v) == 'table' then
+                local pI = printIndent
+                RmLog(printIndent .. tostring(k) .. ' = {', category)
+                printIndent = printIndent .. '    '
+                RmLog(v, category)
+                printIndent = pI
+                RmLog(printIndent .. '}', category)
+            else
+                RmLog(printIndent .. tostring(k) .. ' = ' .. tostring(v), category)
+            end
         end
+    else
+        SKIN:Bang("!Log", message, category)
     end
+      
 end
 
 -- ------------------------------------------------------------------------------------------------------------------------
@@ -531,12 +537,10 @@ end
 
 -- ---------- NOT PART OF THE ORIGINAL SCRIPT - HAD TO BE ADDED FOR THE SCRIPT TO WORK IN LUA ----------
 
-function math.round(x)
-    if x%2 ~= 0.5 then
-        return math.floor(x+0.5)
-    end
-    return x-0.5
-end
+function math.round(num, numDecimalPlaces)
+    local mult = 10^(numDecimalPlaces or 0)
+    return math.floor(num * mult + 0.5) / mult
+  end
 
 function table.length(T)
     local count = 0
