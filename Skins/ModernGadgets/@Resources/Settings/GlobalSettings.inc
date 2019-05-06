@@ -24,10 +24,10 @@ graphHeight=42
 graphWidth=#contentWidth#
 
 ; Sidebars
-setupSb=2
+setupSb=1
 sbSetupMode=Placement
 
-sb1Enabled=1
+sb1Enabled=0
 sb1MaskType=acrylic
 sb1MaskColor=0,0,0
 sb1MaskAlpha=150
