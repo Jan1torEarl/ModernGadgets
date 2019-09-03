@@ -13,8 +13,8 @@ externalIp=66.194.24.242
 
 ; Disk ID from index
 d1=C
-d2=D
-d3=F
+d2=F
+d3=
 d4=
 d5=
 d6=
@@ -25,7 +25,7 @@ d10=
 ; Disk exists
 hideDisk1=0
 hideDisk2=0
-hideDisk3=0
+hideDisk3=1
 hideDisk4=1
 hideDisk5=1
 hideDisk6=1
@@ -37,9 +37,9 @@ hideDisk10=1
 diskAIndex=0
 diskBIndex=0
 diskCIndex=1
-diskDIndex=2
+diskDIndex=0
 diskEIndex=0
-diskFIndex=3
+diskFIndex=2
 diskGIndex=0
 diskHIndex=0
 diskIIndex=0
