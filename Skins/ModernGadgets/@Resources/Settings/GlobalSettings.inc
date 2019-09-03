@@ -11,7 +11,7 @@ cornerRoundness=3
 notifyUpdates=1
 updateCheckRate=90
 autoBackups=1
-checkForPrereleases=0
+checkForPrereleases=1
 
 updateNotificationSound="C:\Windows\media\notify.wav"
 useUpdateNotificationSound=1
@@ -54,14 +54,14 @@ colorGraphBg=#colorSubBg#
 colorGraphBorder=#colorBorder#
 colorGraphGrid=#colorGraphBorder#
 
-colorMain=230,230,230
+colorMain=220,220,220
 colorDim=175,175,175
 colorAccent=137,190,250
-colorDisabled=120,120,120,200
+colorDisabled=100,100,100
 
 colorBarBg=#colorBorder#
 
-colorButtonPress=200,50,50
+colorError=200,53,53
 
 colorInputBg=#colorSubBg#
 colorInputBorder=#colorBorder#

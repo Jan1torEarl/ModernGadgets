@@ -40,6 +40,7 @@ customMaxCpuFan=1600
 ; Colors
 colorRam=107,198,250
 colorPage=255,204,0
+colorAvgCpu=107,238,98
 colorCpuTemp=200,0,0
 colorCpuFan=150,150,150
 ttHistogramAlpha=70
@@ -414,7 +415,7 @@ HWiNFO-CPU0-Core31Vid-EntryId=0x200001f
 ; CPU Ring Clock [HWiNFO-CPU0-RingClock]
 HWiNFO-CPU0-RingClock-SensorId=0xf0000300
 HWiNFO-CPU0-RingClock-SensorInstance=0x0
-HWiNFO-CPU0-RingClock-EntryId=0x6000005
+HWiNFO-CPU0-RingClock-EntryId=0x6000000
 
 ;
 ; MOBO
