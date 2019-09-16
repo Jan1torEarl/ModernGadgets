@@ -3,11 +3,20 @@ MODERNGADGETS CHANGELOG
 ----------------------------------------------------------------------------------------------------
 Official Releases
 
-v1.6.1 - 2019-9-2
+v1.6.2 - 2019-9-16
+- Updated Readme with new attributions
+- Removed several leftover debugging actions
+- Fixed moon icon spots orientation when not showing realistic moon angle
+- Fixed Weather Meter throwing an error when no severe weather alert exists
+
+v1.6.1 - 2019-9-11
 - Added The Weather Channel watermark to the bottom of the forecast skin
-- Fixed NowPlaying progress bar not moving
+- Fixed media progress bar not moving
 - Fixed graph overlay color being tied to the incorrect variable
 - Fixed view license button not having button hover aesthetics
+- Fixed non-hyperthreaded core temps for CoreTemp and SpeedFan
+- Fixed isolated thunderstorms condition not having an icon
+- Fixed hover regions and scaling of welcome skin
 
 v1.6.0 - 2019-8-28
 - Added Battery Meter

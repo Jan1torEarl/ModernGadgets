@@ -1,5 +1,5 @@
 MODERNGADGETS
-v1.6.0
+v1.6.1
 By raiguard
 
 ----------------------------------------
@@ -21,16 +21,14 @@ Designed and programmed by Caleb Heuer (raiguard).
 Backend code based on "Gadgets" by SilverAzide.
 
 "IBM Plex Sans" font from Google Fonts, under the Apache 2.0 License
-"Material Icons" font from Google, under the Apache 2.0 License.
-"Elegant Icons" font from Elegant Themes, under GPL and MIT Licenses.
-"Google Now Weather Feed Icons" from NCrystal on DeviantArt.
+"Font Awesome" icons from FortAwesome, under the Font Awesome Free license
+Weather information is powered by The Weather Channel: https://weather.com
 
 Additional Attributions:
 SilverAzide - ActiveNet plugin, NetMonitor utility, fixed precision format script
 stangowner - HWiNFO Plugin, HWiNFO Shared Memory Viewer
 jsmorley - RainRGB, Rainmeter
 balala - Help with fixing Disks Meter's dynamic height adjustment
-smurfier - ReadINI function
 mourner - SunCalc script
 
 ----------------------------------------
