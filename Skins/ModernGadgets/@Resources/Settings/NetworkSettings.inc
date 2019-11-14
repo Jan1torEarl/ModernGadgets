@@ -1,5 +1,5 @@
 [Variables]
-interfaceEthernet=TIntel(R) Ethernet Connection I217-LM
+interfaceEthernet=Intel(R) Ethernet Connection I217-LM
 interfaceWireless=
 interfaceOther=
 

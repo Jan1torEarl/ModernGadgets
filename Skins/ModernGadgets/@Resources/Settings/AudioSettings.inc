@@ -1,5 +1,5 @@
 [Variables]
-smoothUpdates=1
+smoothUpdates=0
 
 colorVisualizer=#colorAccent#,180
 showDeviceSwitcher=1
@@ -13,6 +13,6 @@ hotkeyPlayPause=0xB3
 hotkeyPrevious=0xB1
 hotkeyNext=0xB0
 ; Visualizer Configuration
-fftSize=2048
+fftSize=256
 fftAttack=100
 fftDecay=60

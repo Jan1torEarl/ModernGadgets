@@ -1,5 +1,5 @@
 [Variables]
-lineGraphAa=1
+lineGraphAa=0
 lineGraphBgType=1
 tempUnits=C
 
@@ -8,7 +8,7 @@ tScale=1
 
 cornerRoundness=3
 
-notifyUpdates=1
+notifyUpdates=0
 updateCheckRate=90
 autoBackups=1
 checkForPrereleases=1
